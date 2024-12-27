@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { FaTrashAlt } from "react-icons/fa"; // Trash icon for removing items
-import { removeFromCart, decreaseQuantity } from "../features/cart/cartSlice"; // Actions for cart
+import { FaTrashAlt } from "react-icons/fa"; 
+import { removeFromCart, decreaseQuantity } from "../features/cart/cartSlice"; 
 import { addToCart } from "../features/cart/cartSlice"; 
 import { useEffect } from "react";
-import { loadCartFromServer } from "../features/cart/cartSlice"; // Redux action to load cart
+import { loadCartFromServer } from "../features/cart/cartSlice"; 
 
 const CartPage = () => {
   const navigate = useNavigate();

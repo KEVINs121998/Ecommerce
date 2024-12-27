@@ -59,10 +59,6 @@ const ProductDetail = () => {
   
     const token = localStorage.getItem("token");
   
-    // Ensure the product.id is being converted to a string that can be used as an ObjectId.
-    const productId = product.id.toString(); // Convert number to string if it's a number
-    console.log(productId)
-  
     try {
       const response = await fetch("http://localhost:5000/cart/add", {
         method: "POST",
@@ -70,7 +66,7 @@ const ProductDetail = () => {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
         },
-        body: JSON.stringify({ productId, quantity: 1 }), 
+        body: JSON.stringify({ productId: product.id, quantity: 1 }), // Use productId instead of product.id
       });
   
       if (!response.ok) {
@@ -83,6 +79,7 @@ const ProductDetail = () => {
       console.error("Error adding to cart:", error);
     }
   };
+  
   
   
    
